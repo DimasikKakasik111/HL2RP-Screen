@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///C:/Users/dimas/Desktop/main.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HL2RP Loading Screen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+  body, html {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    color: #8affff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .background {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('https://i.ytimg.com/vi/0bRHPBb7Sv0/maxresdefault.jpg') center center / cover no-repeat;
+    z-index: -1;
+  }
+  .loading-container {
+    text-align: center;
+    width: 90vw;
+    max-width: 1200px;
+    border: 1px solid #08fff7;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #08fff7;
+    position: relative;
+    background: rgba(10, 10, 10, 0.85);
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #00fff7;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #00fffbaa;
+    text-transform: uppercase;
+  }
+
+  /* Animated loading bars */
+  .bars {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+  .bar {
+    width: 15px;
+    height: 60px;
+    background: #00fffb;
+    opacity: 0.6;
+    animation: bounce 1.5s infinite ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 0 12px #00ffff;
+  }
+  .bar:nth-child(1) { animation-delay: 0s; }
+  .bar:nth-child(2) { animation-delay: 0.2s; }
+  .bar:nth-child(3) { animation-delay: 0.4s; }
+  .bar:nth-child(4) { animation-delay: 0.6s; }
+  .bar:nth-child(5) { animation-delay: 0.8s; }
+
+  @keyframes bounce {
+    0%, 100% { height: 60px; opacity: 0.6; }
+    50% { height: 110px; opacity: 1; }
+  }
+
+  /* Progress percentage */
+  .progress-text {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Info boxes */
+  .info-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .info-box {
+    background: #004d4d;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 140px;
+    box-shadow: 0 0 10px #00ffffaa inset;
+  }
+  .info-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #00ffee;
+    text-transform: uppercase;
+  }
+  .info-value {
+    font-size: 1.2rem;
+  }
+
+  /* Animated scanning bar */
+  .scan-bar {
+    position: absolute;
+    bottom: 0; left: 0; height: 4px;
+    background: linear-gradient(90deg, transparent, #00ffffcc, transparent);
+    width: 0;
+    animation: scan 3s linear infinite;
+    border-radius: 2px;
+  }
+
+  @keyframes scan {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+  }
+
+</style>
+</head>
+<body>
+<div class="background"></div>
+<div class="loading-container">
+  <h1>STRATUM</h1>
+  <div class="subtitle">Идет загрузка подождите...</div>
+
+  <div class="bars">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+
+  <div class="info-boxes">
+    <div class="info-box">
+      <div class="info-title">Server</div>
+      <div class="info-value">Stratum HL2RP</div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">Players</div>
+      <div class="info-value" id="players">Неизвестно</div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">Map</div>
+      <div class="info-value">rp_industrial_v1</div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">IP</div>
+      <div class="info-value">5.166.219.56:2306</div>
+    </div>
+  </div>
+
+  <div class="scan-bar"></div>
+</div>
+
+<script>
+</script>
+
+
+</body></html>
